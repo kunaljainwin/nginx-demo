@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+  server:
+    image: redhat/ubi8:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - "./:/app"
+    tty: true
